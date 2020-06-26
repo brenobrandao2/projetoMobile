@@ -1,5 +1,8 @@
-#loadingSpinner {
+#expandIcon {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+#descriptionTxt {
+    color: white;
 }

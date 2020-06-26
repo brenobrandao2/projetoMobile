@@ -10,10 +10,11 @@ import {
   IonTabs
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
+import { checkmarkOutline, stopOutline, playOutline, listOutline } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
+import Tab4 from './pages/Tab4';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -42,20 +43,25 @@ const App: React.FC = () => (
           <Route path="/tab1" component={Tab1} exact={true} />
           <Route path="/tab2" component={Tab2} exact={true} />
           <Route path="/tab3" component={Tab3} />
+          <Route path="/tab4" component={Tab4} />
           <Route path="/" render={() => <Redirect to="/tab1" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+            <IonIcon icon={listOutline} />
+            <IonLabel>ALL</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+            <IonIcon icon={stopOutline} />
+            <IonLabel>TO DO</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+            <IonIcon icon={playOutline} />
+            <IonLabel>DOING</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab4" href="/tab4">
+            <IonIcon icon={checkmarkOutline} />
+            <IonLabel>DONE</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
