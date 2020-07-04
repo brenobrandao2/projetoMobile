@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner } from '@ionic/react';
-import AddButton from '../components/AddButton'; 
 import TaskCard from '../components/TaskCard';
 import * as TarefaAPI from '../services/TarefaAPI';
 import './Tab3.css';
