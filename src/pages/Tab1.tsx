@@ -7,16 +7,16 @@ import * as TarefaAPI from '../services/TarefaAPI';
 
 const Tab1: React.FC = () => {
   const [listaTarefas, setListaTarefas] = useState<{"id": number, "title": string, "status": number, "description": string, "created_at": Date, "updated_at": Date, "completed_at": Date, "excluded_at": Date}[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const getTarefas = async () => {
     const response = await TarefaAPI.getList();
     setListaTarefas(response.results);
+    setLoading(false);
   };
 
   useEffect(() => {
     getTarefas();
-    setLoading(false);
   }, [])
 
   const refresh = async () => {

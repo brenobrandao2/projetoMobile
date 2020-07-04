@@ -44,3 +44,19 @@ export const createTask = () => {
         throw err;
     });
 };
+
+export const deleteTask = (id: number) => {
+    const url = baseUrl + "/" + id + "/";
+
+    return fetch(`${url}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => {})
+    .catch(err => {
+        console.error('Erro: ', JSON.stringify(err));
+        throw err;
+    });
+}

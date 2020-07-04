@@ -6,3 +6,6 @@
 #descriptionTxt {
     color: white;
 }
+#title {
+    z-index: 0;
+}

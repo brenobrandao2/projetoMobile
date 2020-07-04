@@ -48,17 +48,17 @@ const TaskCard: React.FC<{id: number, titulo: string, descricao: string, status:
     return (
         <IonCard style={{backgroundColor: color}}>
             <IonCardHeader>
-            <IonCardTitle>
-                <IonInput value={title} onIonFocus={() => setFocus(true)} onIonBlur={() => onLostFocus()} placeholder="Digite o título" onIonChange={e => setTitulo(e.detail.value!)} clearInput></IonInput>
-                <DeleteButton display={focus ? "none" : "block"}/>
-            </IonCardTitle>
+                <IonCardTitle>
+                    <IonInput id="title" value={title} onIonFocus={() => setFocus(true)} onIonBlur={() => onLostFocus()} placeholder="Digite o título" onIonChange={e => setTitulo(e.detail.value!)} clearInput></IonInput>
+                    <DeleteButton display={focus ? "none" : "block"} id={id} refresh={() => refresh()}/>
+                </IonCardTitle>
             </IonCardHeader>
 
             <IonCardContent>
-            {expand && <IonTextarea id="descriptionTxt" rows={4} value={content} onIonFocus={() => setFocus(true)} onIonBlur={() => onLostFocus()} placeholder="Digite a descrição" onIonChange={e => setDescricao(e.detail.value!)}></IonTextarea >}
-            {expand && <IoIosArrowUp id="expandIcon" color="white" size={20} onClick={() => setExpand(false)} />}
-            {!expand && <IoIosArrowDown id="expandIcon" color="white" size={20} onClick={() => setExpand(true)} />}
-            <StatusTab id={id} status={status} refresh={() => refresh()}/>
+                {expand && <IonTextarea id="descriptionTxt" rows={4} value={content} onIonFocus={() => setFocus(true)} onIonBlur={() => onLostFocus()} placeholder="Digite a descrição" onIonChange={e => setDescricao(e.detail.value!)}></IonTextarea >}
+                {expand && <IoIosArrowUp id="expandIcon" color="white" size={20} onClick={() => setExpand(false)} />}
+                {!expand && <IoIosArrowDown id="expandIcon" color="white" size={20} onClick={() => setExpand(true)} />}
+                <StatusTab id={id} status={status} refresh={() => refresh()}/>
             </IonCardContent>
         </IonCard>
     );
