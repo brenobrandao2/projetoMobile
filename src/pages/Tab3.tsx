@@ -10,7 +10,7 @@ const Tab3: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const getTarefas = async () => {
-    const response = await TarefaAPI.getList();
+    const response = await TarefaAPI.getListByStatus(1);
     setListaTarefas(response.results);
   };
 
